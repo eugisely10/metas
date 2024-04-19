@@ -1,0 +1,113 @@
+:root {
+ --cor-de-fundo: #c391da;
+ --ROA: #eb0684;
+ --branco: #FFFFFF;
+ --botao-ativo: #210e38;
+ --botao-inativo: rgba(133, 90, 182, 0.5);
+ --texto-fundo: rgba(238, 66, 13, 0.3);
+}
+
+
+body {
+ background-color: var(--cor-de-fundo);
+ color: var(--branco);
+ font-family: 'Chakra Petch', sans-serif;
+}
+.conteudo-principal {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   max-width: 1200px;
+   width: 100%;
+   margin: 0 auto;
+}
+.titulo-principal {
+   text-align: center;
+   width: 100%;
+   font-size: 32px;
+}
+
+
+.titulo-principal span {
+
+
+   color: var(--AZUL);
+}
+
+
+.botao {
+   font-family: "Crakra Petch", sans-serif;
+   background-color: var(--botao-inativo);
+   color: var(--branco);
+   display: flex;
+   justify-content: center;
+   padding: 1em;
+   font-size: 18px;
+   align-items: center;
+   width: 100%;
+   border-bottom: 4px solid var(--botao-ativo);
+   border-left: 2px solid var(--botao-ativo);
+   border-right: 2px solid var(--botao-ativo);
+   border-top: none;
+}
+
+
+.botoes {
+   display: block;
+}
+
+
+@media screen and (min-width: 768px) {
+   .botoes {
+       display: flex;
+   }
+
+
+   .botao:first-child {
+       border-radius: 40px 0 0 0;
+   }
+
+
+   .botao:last-child {
+       border-radius: 0 40px 0 0;
+   }
+}
+
+
+.ativo{
+   background-color: var(--botao-ativo);
+   border-bottom: 4px solid var(--ROSA);
+   }
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Meus objetivos do ano</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <section class="conteudo-principal">
+     <h2 class="titulo-principal">Meus Objetivos do ano<span>_</span></h2>
+     <div class="botoes">
+       <button class="botao">Formatura E.M.</button>
+       <button class="botao">Formatura do curso</button>
+       <button class="botao">enem</button>
+       <button class="botao">Academia</button>
+     </div>
+   </section>
+   <script src="main.js"></script>
+ </body>
+ </html>
+ const botoes = document.querySelectorAll(".botao");
+
+
+ for(let i=0;i <botoes.length;i++){
+     botoes[i].onclick = function(){
+          for(let j=0;j<botoes.length;j++){
+             botoes[j].classList.remove("ativo");
+         }
+          botoes[i].classList.add("ativo");
+     }
+ }
